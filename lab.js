@@ -30,6 +30,8 @@
      * up each item in the array and return the total value as the accumulator
      */
     function iterator(item, accumulator) {
+        accumulator += item;
+        return accumulator;
 
     }
 var lab = {
@@ -47,7 +49,14 @@ var lab = {
          * Objective: multiply each number in the array by 2 and return the modified array
          */
         foreach: function(arg) {
-
+            // arg.forEach(function multiply(element, index) {
+            //     arr[index] = element * 2;
+            // });
+            // return arr;
+            for (var i = 0; i < arg.length; i++) {
+                arg[i] = arg[i] * 2;
+            }
+            return arg;
         },
         /**
          * the map method should iterate over the array and perform a function on all the array items
@@ -55,7 +64,16 @@ var lab = {
          * Objective: multiple each number in the array by 2 and return the new array
          */
         map: function(arg) {
-
+            // arr.map(function(element) {
+            //     return element * 2;
+            // });
+            // return arr;
+            var results = [];
+            for (var i = 0; i < arg.length; i++) {
+                
+                results.push(arg[i] *2);
+            }
+            return results;
         },
         /**
          * the filter method should iterate over the array and perform a test on each value in the array
@@ -63,13 +81,34 @@ var lab = {
          * Objective: return array of values that are > 30
          */
         filter: function(arg, min) {
-
+            // arr.filter(function(element) {
+            //     if (element > 30) {
+            //         return element;
+            //     }
+            //     });
+            //     return arr;
+            var results = [];
+            for (var i = 0; i < arg.length; i++) {
+                if (arg[i] > min) {
+                    results.push(arg[i]);
+                }
+            }
+            return results;
         },
         /**
          * the concatAll method should take in a nested array and then return a new array that has been flattened
          * this means the array does not contain any items within it that themselves an array
          */
         concatAll: function(arg) {
+            // return nestArr.concatAll(function() {
+            //     var newArray = nestArr
+            //     return element;
+            // });
+            return arr;
+            var results = [];
+            for (var i = 0; i < arg.length; i++) {
+                for 
+            };
 
         },
         /**
@@ -80,7 +119,10 @@ var lab = {
          * Objective: return the sum of all items in the array
          */
         reduce: function(list, iterator, accumulator) {
-
+            for (var i = 0; i < list.length; i++) {        
+                accumulator = iterator(list[i], accumulator);
+            }
+            return accumulator;
         },
 
         //Object functions
@@ -91,6 +133,13 @@ var lab = {
          * Objective: iterate over the object and return true if the property: 'propertyChecked' is on the object
          */
         hasOwnProperty: function(arg, propertyChecked) {
+            for (property in arg) {
+                if (property === propertyChecked) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
 
         },
         /**
